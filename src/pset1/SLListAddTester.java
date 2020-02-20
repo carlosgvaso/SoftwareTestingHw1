@@ -17,13 +17,20 @@ public class SLListAddTester {
 		assertTrue(l.header != null);
 		// your code goes here
 
-		// Check the new node elem is set to true
+		// Check the header points to a Node object
+		assertTrue(l.header instanceof SLList.Node);
+
+		// TODO: Do I need this?
+		//assertTrue(l.header.elem instanceof boolean);
+
+		// Check the new node elem value is true
 		assertTrue(l.header.elem);
 
-		// Check the new node next object does not point to any other node (is null)
+		// Check the new node next attribute does not point to any other node (is null)
 		assertTrue(l.header.next == null);
 
-		// TODO: Might need to test the obj/var types.
+		// Check there are no cycles introduced by the new node
+		assertTrue(l.repOk());
 	}
 
 	@Test
@@ -42,18 +49,22 @@ public class SLListAddTester {
 		assertTrue(l.header != null);
 		// your code goes here
 
-		// Check the second added node elem is set to false
+		// Check the header points to a Node object
+		assertTrue(l.header instanceof SLList.Node);
+
+		// Check the second added node (first on the list) elem value is false
 		assertTrue(!l.header.elem);
 
-		// Check the second added node next object points to the first added node
+		// Check the second added node (first on the list) next attribute points to a Node object
+		assertTrue(l.header.next instanceof SLList.Node);
+
+		// Check the second added node (first on the list) next object points to another node (not null)
 		assertTrue(l.header.next != null);
 
-		// Check the first added node elem is set to true
+		// Check the first added node (second on the list) elem value is true
 		assertTrue(l.header.next.elem);
 
-		// Check the first added node next object does not point to any other node (is null)
+		// Check the first added node (second on the list) next object does not point to any other node (null)
 		assertTrue(l.header.next.next == null);
-
-		// TODO: Might need to test the obj/var types.
 	}
 }

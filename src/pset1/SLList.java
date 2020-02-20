@@ -33,16 +33,21 @@ public class SLList {
 
 		// your code goes here
 
+		// Check for cycles (precondition), and do nothing if list is cyclical
+		if (!this.repOk()) {
+			return;
+		}
+
 		// Create new node instance
 		Node new_node = new Node();
 
 		// Add elem value to new node
 		new_node.elem = e;
 
-		// Point next object of new node to the first node on the list
+		// Point next object of new node we are adding to the first node on the list
 		new_node.next = this.header;
 
-		// Point the beginning of the list to the new node
+		// Point the beginning of the list to the new node we are adding
 		this.header = new_node;
 	}
 }
