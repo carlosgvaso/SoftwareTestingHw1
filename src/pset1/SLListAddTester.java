@@ -20,9 +20,6 @@ public class SLListAddTester {
 		// Check the header points to a Node object
 		assertTrue(l.header instanceof SLList.Node);
 
-		// TODO: Do I need this?
-		//assertTrue(l.header.elem instanceof boolean);
-
 		// Check the new node elem value is true
 		assertTrue(l.header.elem);
 
